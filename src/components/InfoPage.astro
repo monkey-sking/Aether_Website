@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../i18n/utils";
+import { getSiteCopy } from "../data/siteCopy";
+import { getChangelogTimeline } from "../data/changelog";
+
+import * as zhGuide from '../data/user_guide_zh.md';
+import * as enGuide from '../data/user_guide_en.md';
+
+interface Props {
+  page: "guide" | "privacy" | "terms" | "changelog" | "betaChangelog";
+}
+
+const { page } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const copy = getSiteCopy(lang);
+
+const dataMap = {
+  guide: copy.guide,
+  privacy: copy.privacy,
+  terms: copy.terms,
+  changelog: copy.changelog,
+  betaChangelog: copy.betaChangelog,
+};
+
+const current = dataMap[page];
+const changelogEntries = page === "changelog"
+  ? getChangelogTimeline(lang, "stable")
+  : page === "betaChangelog"
+    ? getChangelogTimeline(lang, "beta")
+    : null;
+const changelogBasePath = lang === "en" ? "/changelog" : `/${lang}/changelog`;
+const betaChangelogBasePath = lang === "en" ? "/beta-changelog" : `/${lang}/beta-changelog`;
+const changelogSwitchLink = page === "changelog"
+  ? {
+      href: betaChangelogBasePath,
+      label: lang === "zh-hans" ? "查看 Beta 更新日志" : "View Beta Changelog",
+    }
+  : page === "betaChangelog"
+    ? {
+        href: changelogBasePath,
+        label: lang === "zh-hans" ? "查看正式版更新日志" : "View Stable Changelog",
+      }
+    : null;
+
+const Content = page === 'guide' 
+  ? (lang === 'zh-hans' ? zhGuide.Content : enGuide.Content) 
+  : null;
+---
+
+<BaseLayout title={current.title} description={current.description}>
+  <main class="container page-stack prose-shell">
+    <div class="section-heading narrow">
+      <span class="section-tag">{copy.meta.siteName}</span>
+      <h1>{current.title}</h1>
+      {"intro" in current && page !== 'guide' && <p>{current.intro}</p>}
+    </div>
+
+    {changelogSwitchLink && (
+      <div class="channel-switch">
+        <a href={changelogSwitchLink.href} class="channel-link">
+          {changelogSwitchLink.label}
+        </a>
+      </div>
+    )}
+
+    {page === 'guide' && Content ? (
+      <div class="prose-card md-content">
+        <Content />
+      </div>
+    ) : (
+      <>
+        {"sections" in current && (
+          <div class="prose-list">
+            {current.sections.map((section) => (
+              <section class="prose-card">
+                <h2>{section.title}</h2>
+                <p>{section.body}</p>
+              </section>
+            ))}
+          </div>
+        )}
+
+        {changelogEntries && changelogEntries.length > 0 && (
+          <div class="timeline-list">
+            {changelogEntries.map((entry) => (
+              <article class="timeline-card">
+                <div class="timeline-head">
+                  <h2>{entry.version}</h2>
+                  <span>{entry.date}</span>
+                </div>
+                <ul class="detail-list">
+                  {entry.bullets.map((bullet) => <li>{bullet}</li>)}
+                </ul>
+              </article>
+            ))}
+          </div>
+        )}
+
+        {changelogEntries && changelogEntries.length === 0 && (
+          <section class="prose-card empty-state-card">
+            <h2>{current.emptyTitle}</h2>
+            <p>{current.emptyBody}</p>
+          </section>
+        )}
+      </>
+    )}
+  </main>
+</BaseLayout>
+
+<style>
+  .channel-switch {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+
+  .channel-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(15, 23, 42, 0.78);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 160ms ease, transform 160ms ease;
+  }
+
+  .channel-link:hover {
+    color: rgba(15, 23, 42, 1);
+    transform: translateY(-1px);
+  }
+
+  .empty-state-card {
+    text-align: center;
+  }
+</style>

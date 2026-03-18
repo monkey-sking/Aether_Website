@@ -1,0 +1,253 @@
+---
+// Analytics.astro
+// Replace the ID placeholders below with your actual Property IDs.
+// 如果不想启用某项，留空或注释掉即可。
+
+const GOOGLE_ID = "G-NWZD5W06VL"; // e.g., G-XXXXXXXXXX
+const BAIDU_ID = "e5593846ee1e0a9809881f8067fe0483";  // e.g., 57e94d016...
+const CLARITY_ID = "vy4ovpki3y"; // e.g., k8y...
+const CF_BEACON_ID = ""; // e.g., your-cf-beacon-id
+
+const isProd = import.meta.env.PROD; // Only run in production build
+---
+
+{isProd && GOOGLE_ID && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ID}`} is:inline></script>
+    <script is:inline define:vars={{ GOOGLE_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GOOGLE_ID);
+    </script>
+  </>
+)}
+
+{isProd && BAIDU_ID && (
+    <script is:inline define:vars={{ BAIDU_ID }}>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?" + BAIDU_ID;
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+)}
+
+{isProd && CLARITY_ID && (
+    <script is:inline define:vars={{ CLARITY_ID }} type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", CLARITY_ID);
+    </script>
+)}
+
+{isProd && CF_BEACON_ID && (
+  <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token": "${CF_BEACON_ID}"}`}></script>
+)}
+
+<script is:inline>
+  const stableRedirectModal = (() => {
+    const overlay = document.createElement("div");
+    overlay.className = "download-redirect-modal";
+    overlay.hidden = true;
+    overlay.innerHTML = `
+      <div class="download-redirect-backdrop" data-modal-close></div>
+      <div class="download-redirect-panel" role="dialog" aria-modal="true" aria-labelledby="download-redirect-title">
+        <h2 id="download-redirect-title"></h2>
+        <p class="download-redirect-body"></p>
+        <div class="download-redirect-actions">
+          <button type="button" class="download-redirect-secondary" data-modal-cancel></button>
+          <button type="button" class="download-redirect-primary" data-modal-confirm></button>
+        </div>
+      </div>
+    `;
+
+    const style = document.createElement("style");
+    style.textContent = `
+      .download-redirect-modal[hidden] { display: none; }
+      .download-redirect-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+      }
+      .download-redirect-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(3, 8, 16, 0.68);
+        backdrop-filter: blur(8px);
+      }
+      .download-redirect-panel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: min(480px, calc(100vw - 32px));
+        transform: translate(-50%, -50%);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(180deg, rgba(11, 20, 34, 0.96), rgba(9, 17, 29, 0.98));
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+        padding: 28px 24px 22px;
+        color: #eef5ff;
+      }
+      .download-redirect-panel h2 {
+        margin: 0 0 10px;
+        font-size: 1.35rem;
+        line-height: 1.2;
+      }
+      .download-redirect-body {
+        margin: 0;
+        color: rgba(220, 232, 248, 0.78);
+      }
+      .download-redirect-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 22px;
+      }
+      .download-redirect-actions button {
+        border: 0;
+        border-radius: 999px;
+        min-height: 44px;
+        padding: 0 18px;
+        font: inherit;
+        cursor: pointer;
+      }
+      .download-redirect-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(238, 245, 255, 0.88);
+      }
+      .download-redirect-primary {
+        background: linear-gradient(135deg, #6ce7ff, #8ea6ff);
+        color: #04101d;
+        font-weight: 700;
+      }
+      @media (max-width: 640px) {
+        .download-redirect-panel {
+          padding: 24px 18px 18px;
+        }
+        .download-redirect-actions {
+          flex-direction: column-reverse;
+        }
+        .download-redirect-actions button {
+          width: 100%;
+        }
+      }
+    `;
+
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+
+    const title = overlay.querySelector("#download-redirect-title");
+    const body = overlay.querySelector(".download-redirect-body");
+    const cancelButton = overlay.querySelector("[data-modal-cancel]");
+    const confirmButton = overlay.querySelector("[data-modal-confirm]");
+    const closers = overlay.querySelectorAll("[data-modal-close], [data-modal-cancel]");
+    let resolver = null;
+
+    const close = (accepted) => {
+      overlay.hidden = true;
+      document.body.style.removeProperty("overflow");
+      if (resolver) resolver(accepted);
+      resolver = null;
+    };
+
+    closers.forEach((element) => {
+      element.addEventListener("click", () => close(false));
+    });
+    confirmButton.addEventListener("click", () => close(true));
+    document.addEventListener("keydown", (event) => {
+      if (!overlay.hidden && event.key === "Escape") {
+        close(false);
+      }
+    });
+
+    return ({ heading, message, cancelLabel, confirmLabel }) => {
+      title.textContent = heading;
+      body.textContent = message;
+      cancelButton.textContent = cancelLabel;
+      confirmButton.textContent = confirmLabel;
+      overlay.hidden = false;
+      document.body.style.overflow = "hidden";
+      confirmButton.focus();
+      return new Promise((resolve) => {
+        resolver = resolve;
+      });
+    };
+  })();
+
+  document.addEventListener("click", (event) => {
+    const anchor = event.target instanceof Element ? event.target.closest("a[data-download-kind]") : null;
+    if (!(anchor instanceof HTMLAnchorElement)) return;
+
+    const kind = anchor.dataset.downloadKind || "manual";
+    const channel = anchor.dataset.downloadChannel || "unknown";
+    const href = anchor.getAttribute("href") || "";
+    const eventName = `download_${kind}_${channel}`;
+    const path = window.location.pathname || "/";
+    const lang = path.startsWith("/zh-hans") ? "zh-hans" : "en";
+
+    if (channel === "stable") {
+      event.preventDefault();
+
+      const betaHref = anchor.dataset.betaRedirect || "/beta/Aether.dmg";
+      const modalCopy = lang.startsWith("zh")
+        ? {
+            heading: "正式版暂未开放",
+            message: "当前对外开放的是 Beta 下载。你可以先下载 Beta 版本继续体验 Aether。",
+            cancelLabel: "先不下载",
+            confirmLabel: "前往 Beta 下载",
+          }
+        : {
+            heading: "Stable is not public yet",
+            message: "Beta downloads are currently the public channel. You can continue with the Beta build for now.",
+            cancelLabel: "Not now",
+            confirmLabel: "Open Beta Download",
+          };
+
+      stableRedirectModal(modalCopy).then((accepted) => {
+        if (typeof window.gtag === "function") {
+          window.gtag("event", accepted ? "download_manual_stable_redirect_beta" : "download_manual_stable_cancel", {
+            event_category: "download",
+            event_label: href,
+            channel,
+            kind,
+          });
+        }
+
+        if (Array.isArray(window._hmt)) {
+          window._hmt.push(["_trackEvent", "download", accepted ? "download_manual_stable_redirect_beta" : "download_manual_stable_cancel", href]);
+        }
+
+        if (typeof window.clarity === "function") {
+          window.clarity("event", accepted ? "download_manual_stable_redirect_beta" : "download_manual_stable_cancel");
+        }
+
+        if (accepted) {
+          window.location.href = betaHref;
+        }
+      });
+      return;
+    }
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, {
+        event_category: "download",
+        event_label: href,
+        channel,
+        kind,
+      });
+    }
+
+    if (Array.isArray(window._hmt)) {
+      window._hmt.push(["_trackEvent", "download", eventName, href]);
+    }
+
+    if (typeof window.clarity === "function") {
+      window.clarity("event", eventName);
+    }
+  });
+</script>

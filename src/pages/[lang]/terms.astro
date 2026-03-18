@@ -1,0 +1,12 @@
+---
+import InfoPage from "../../components/InfoPage.astro";
+import { languages } from "../../i18n/ui";
+
+export function getStaticPaths() {
+  return Object.keys(languages)
+    .filter((lang) => lang !== "en")
+    .map((lang) => ({ params: { lang } }));
+}
+---
+
+<InfoPage page="terms" />

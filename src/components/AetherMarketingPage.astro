@@ -1,0 +1,211 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../i18n/utils";
+import { getSiteCopy } from "../data/siteCopy";
+
+interface Props {
+  page: "home" | "download" | "pricing" | "faq" | "beta";
+}
+
+const { page } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const copy = getSiteCopy(lang);
+
+const titleMap = {
+  home: copy.home.title,
+  download: copy.download.title,
+  pricing: copy.pricing.title,
+  faq: copy.faq.title,
+  beta: copy.beta.title,
+};
+
+const descMap = {
+  home: copy.home.subtitle,
+  download: copy.download.subtitle,
+  pricing: copy.pricing.subtitle,
+  faq: copy.faq.subtitle,
+  beta: copy.beta.subtitle,
+};
+
+const homePath = lang === "zh-hans" ? "/zh-hans/" : "/";
+const pricingPath = `${homePath}pricing`;
+const downloadPath = `${homePath}download`;
+const faqPath = `${homePath}faq`;
+const guidePath = `${homePath}guide`;
+const betaPath = `${homePath}beta`;
+
+function visibleDownloadPath(rawURL: string) {
+  const base = rawURL.split("?")[0];
+  if (base.startsWith("http://") || base.startsWith("https://")) {
+    return new URL(base).pathname;
+  }
+  return base;
+}
+
+function escapeHtml(input: string) {
+  return input
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function formatHeroTitle(title: string) {
+  const escaped = escapeHtml(title);
+  return escaped
+    .replaceAll("keyboard and mouse", `<span class="nowrap">keyboard and mouse</span>`)
+    .replaceAll("键盘鼠标", `<span class="nowrap">键盘鼠标</span>`)
+    .replaceAll("语音操作", `<span class="nowrap">语音操作</span>`)
+    .replaceAll("语音输入", `<span class="nowrap">语音输入</span>`);
+}
+---
+
+<BaseLayout title={titleMap[page]} description={descMap[page]}>
+  <main class="site-main">
+    {page === "home" && (
+      <>
+        <section class="hero-band">
+          <div class="container hero-centered">
+            <div class="hero-copy hero-copy-center">
+              <div class="hero-copy-top hero-copy-top-center">
+                {copy.home.heroTag && <span class="hero-tagline">{copy.home.heroTag}</span>}
+                <h1 set:html={formatHeroTitle(copy.home.title)}></h1>
+                <p class="hero-subtitle">{copy.home.subtitle}</p>
+                <div class="hero-pill-row center-pills">
+                  {copy.home.heroPills.map((pill) => (
+                    <span class="hero-pill">
+                      <i class="glow-dot"></i>
+                      {pill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div class="hero-actions center-actions">
+                <a class="btn btn-primary btn-large" href={copy.download.stablePath} data-download-kind="manual" data-download-channel="stable" data-beta-redirect={copy.download.betaPath}>{copy.home.primaryCta}</a>
+                <div class="hero-footnote-group">
+                  <span class="hero-footnote">{copy.home.heroFootnote}</span>
+                  <a class="hero-beta-footnote-link" href={copy.download.betaPath} data-download-kind="manual" data-download-channel="beta">
+                    {copy.home.betaLinkLabel}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="container section-stack">
+          <div class="section-heading narrow">
+            <span class="section-tag">{copy.home.setupTag}</span>
+            <h2>{copy.home.setupTitle}</h2>
+          </div>
+          <div class="start-grid">
+            {copy.home.setupSteps.map((item) => (
+              <article class="start-card">
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </>
+    )}
+
+    )}
+
+    {page === "pricing" && (
+      <section class="container page-stack">
+        <div class="section-heading narrow">
+          <span class="section-tag">{copy.pricing.tag}</span>
+          <h1>{copy.pricing.title}</h1>
+          <p>{copy.pricing.subtitle}</p>
+        </div>
+        
+        {copy.pricing.plans.length > 0 ? (
+          <div class="pricing-grid">
+            {copy.pricing.plans.map((plan, index) => (
+              <article class={`pricing-card ${index === 0 ? "featured-plan" : ""}`}>
+                <span class="section-tag">{plan.eyebrow}</span>
+                <h2>{plan.name}</h2>
+                <p class="price-mark">{plan.price}</p>
+                <p>{plan.body}</p>
+                <ul class="detail-list">
+                  {plan.bullets.map((bullet) => <li>{bullet}</li>)}
+                </ul>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div class="note-shell pricing-placeholder">
+            <p style="font-size: 1.2rem; color: var(--ink-soft); text-align: center; padding: 40px 0;">
+               {copy.pricing.noteBody}
+            </p>
+          </div>
+        )}
+
+
+        
+
+      </section>
+    )}
+
+    {page === "faq" && (
+      <section class="container page-stack">
+        <div class="section-heading narrow">
+          <span class="section-tag">{copy.faq.tag}</span>
+          <h1>{copy.faq.title}</h1>
+          <p>{copy.faq.subtitle}</p>
+        </div>
+        <div class="faq-grid faq-grid-featured">
+          {copy.faq.items.slice(0, 2).map((item) => (
+            <article class="faq-card faq-card-featured">
+              <h2>{item.title}</h2>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <div class="faq-grid">
+          {copy.faq.items.slice(2).map((item) => (
+            <article class="faq-card">
+              <h2>{item.title}</h2>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {page === "beta" && (
+      <section class="container page-stack">
+        <div class="section-heading narrow">
+          <span class="section-tag">{copy.beta.tag}</span>
+          <h1>{copy.beta.title}</h1>
+          <p>{copy.beta.subtitle}</p>
+        </div>
+        <div class="two-column-panel">
+          <article class="info-card feature-card">
+            <h2>{copy.nav.beta}</h2>
+            <ul class="detail-list">
+              {copy.beta.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          </article>
+          <article class="download-card beta-tone">
+            <h2>{copy.beta.cautionTitle}</h2>
+            <p>{copy.beta.cautionBody}</p>
+            <div class="action-row">
+              <a class="btn btn-primary" href={copy.download.betaPath} data-download-kind="manual" data-download-channel="beta">Beta DMG</a>
+              <a class="btn btn-secondary" href="/aether-beta/appcast.xml">Beta Appcast</a>
+            </div>
+          </article>
+        </div>
+        <div class="note-shell">
+          <h3>{copy.beta.reportTitle}</h3>
+          <p>{copy.beta.reportBody}</p>
+        </div>
+      </section>
+    )}
+  </main>
+</BaseLayout>
