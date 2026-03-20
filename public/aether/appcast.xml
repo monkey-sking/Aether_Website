@@ -2,5 +2,15 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>Aether Stable Appcast</title>
+        <item>
+            <title>0.1.0</title>
+            <pubDate>Fri, 20 Mar 2026 17:16:09 +0800</pubDate>
+            <link>https://aether.7caifei.com/download</link>
+            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
+            <sparkle:version>202603201714</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://aether.7caifei.com/aether/Aether_0.1.0_202603201714.zip" length="8023424" type="application/octet-stream" sparkle:edSignature="ORhN5naTIUVxjkpL3EDcsi99MZKIa9RIBYqCdNUMVV87qpWSEzWjw08Ip4D7DUi8hmmRF7e8Co5jIiD4+M3XCw=="/>
+        </item>
     </channel>
 </rss>
