@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aetherwebsite",
+  "main": "dist/_worker.js/index.js",
+  "compatibility_date": "2026-03-20",
+  "compatibility_flags": [
+    "global_fetch_strictly_public",
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "dist"
+  }
+}
