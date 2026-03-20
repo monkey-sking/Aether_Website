@@ -49,6 +49,36 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
         "zh-hans": [],
       },
     },
+    {
+      version: "0.1.0-beta (202603201212)",
+      date: "2026-03-20",
+      new: {
+        en: [],
+        "zh-hans": [],
+      },
+      improved: {
+        en: [
+          "Expanded the built-in voice lexicon across more locales.",
+          "Refined the main window layout and sidebar sizing behavior.",
+          "Moved the activation gate to a sheet flow so the main UI stays consistent.",
+        ],
+        "zh-hans": [
+          "扩展内置语音指令词库，覆盖更多语言环境。",
+          "优化主窗口布局与侧边栏宽度适配逻辑。",
+          "将授权门槛改为 sheet 流程，主界面保持一致。",
+        ],
+      },
+      fixed: {
+        en: [
+          "Fixed a routing edge case where shorter aliases could win over longer, more specific commands.",
+          "Adjusted the DMG Finder layout for a cleaner drag-to-Applications experience.",
+        ],
+        "zh-hans": [
+          "修复语音路由在部分场景下被较短别名抢先匹配的问题（更长、更准确的指令优先）。",
+          "调整 DMG Finder 布局，拖拽到 Applications 更清晰。",
+        ],
+      },
+    },
   ],
 };
 
