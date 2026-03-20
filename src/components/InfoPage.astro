@@ -52,17 +52,16 @@ const Content = page === 'guide'
   <main class="container page-stack prose-shell">
     <div class="section-heading narrow">
       <span class="section-tag">{copy.meta.siteName}</span>
-      <h1>{current.title}</h1>
+      <div class="title-row">
+        <h1>{current.title}</h1>
+        {changelogSwitchLink && (
+          <a href={changelogSwitchLink.href} class="channel-inline">
+            {changelogSwitchLink.label}
+          </a>
+        )}
+      </div>
       {"intro" in current && page !== 'guide' && <p>{current.intro}</p>}
     </div>
-
-    {changelogSwitchLink && (
-      <div class="channel-switch">
-        <a href={changelogSwitchLink.href} class="channel-link">
-          {changelogSwitchLink.label}
-        </a>
-      </div>
-    )}
 
     {page === 'guide' && Content ? (
       <div class="prose-card md-content">
@@ -109,25 +108,36 @@ const Content = page === 'guide'
 </BaseLayout>
 
 <style>
-  .channel-switch {
+  .title-row {
     display: flex;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
   }
 
-  .channel-link {
+  .title-row h1 {
+    margin: 0;
+  }
+
+  .channel-inline {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: rgba(15, 23, 42, 0.78);
+    color: var(--teal);
     text-decoration: none;
-    font-weight: 600;
-    transition: color 160ms ease, transform 160ms ease;
+    font-weight: 700;
+    font-size: 0.95rem;
+    opacity: 0.92;
+    transition: opacity 160ms ease, transform 160ms ease, text-decoration-color 160ms ease;
+    text-decoration: underline;
+    text-decoration-color: rgba(158, 182, 255, 0.35);
+    text-underline-offset: 4px;
   }
 
-  .channel-link:hover {
-    color: rgba(15, 23, 42, 1);
+  .channel-inline:hover {
+    opacity: 1;
     transform: translateY(-1px);
+    text-decoration-color: rgba(158, 182, 255, 0.75);
   }
 
   .empty-state-card {
