@@ -4,6 +4,19 @@
         <title>Aether Stable Appcast</title>
         <item>
             <title>0.1.0</title>
+            <pubDate>Fri, 20 Mar 2026 17:20:29 +0800</pubDate>
+            <link>https://aether.7caifei.com/download</link>
+            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
+            <sparkle:version>202603201719</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://aether.7caifei.com/aether/Aether_0.1.0_202603201719.zip" length="8026210" type="application/octet-stream" sparkle:edSignature="aKiRTQxl/tLO6ib5oAJ+1bba7q3qjthvYHTW60EPqRo+erCOIGHgGZcmZZ2r5uCOeWqzP/JkElgYv4/ZPOoXDw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://aether.7caifei.com/aether/Aether202603201719-202603201714.delta" sparkle:deltaFrom="202603201714" length="446974" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="SUngvb0OyEE4mT+YJG23AXFJnEI1A+HesxerLviu9jplqwEk569ExdlDF4xNH4AuDDKSzN3RsnGn2+vyHT/mDg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>0.1.0</title>
             <pubDate>Fri, 20 Mar 2026 17:16:09 +0800</pubDate>
             <link>https://aether.7caifei.com/download</link>
             <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
