@@ -15,6 +15,11 @@ const lang = getLangFromUrl(Astro.url);
 const copy = getSiteCopy(lang);
 const { title, description = copy.meta.defaultDescription } = Astro.props;
 
+const fullTitle = `${title} | ${copy.meta.siteName}`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.url.origin).href;
+const ogImageUrl = new URL("/logo-clean.png", Astro.url.origin).href;
+const ogLocale = lang === "zh-hans" ? "zh_CN" : "en_US";
+
 function getLocalizedPath(targetLang: string) {
   let path = Astro.url.pathname;
   if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
@@ -55,7 +60,21 @@ const navItems = [
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | {copy.meta.siteName}</title>
+    <title>{fullTitle}</title>
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={copy.meta.siteName} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={ogLocale} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- SEO Verifications (Uncomment and fill with tokens when available) -->
     <!-- <meta name="google-site-verification" content="GOOGLE_TOKEN_HERE" /> -->
