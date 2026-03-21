@@ -4,6 +4,20 @@
         <title>Aether</title>
         <item>
             <title>0.1.0</title>
+            <pubDate>Sat, 21 Mar 2026 12:09:09 +0800</pubDate>
+            <link>https://aether.7caifei.com/download</link>
+            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
+            <sparkle:version>20260321120806</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_20260321120806.zip" length="8100514" type="application/octet-stream" sparkle:edSignature="blD0ZriMOyFURWQjKvzITG5/m7qLvv7O8jgJs2EOoW0ZxNsWv1xtdx2Dq/bl1pkDL0wtre2wnhJ3LqkzdeQMCw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321120806-20260321115904.delta" sparkle:deltaFrom="20260321115904" length="409570" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="weM+cgQH3h2egLLHcnA05B1zkSusFkZbEiU2+2zpULPpbAdEP1Yjt68n4e/hb1oLLtYandSDk3dgXc0eo3ezAA=="/>
+                <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321120806-20260321114941.delta" sparkle:deltaFrom="20260321114941" length="406982" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="nIms6a49YIIcdbVA4qPHn34hdyBnBYsjt0QPsyW/H/NXs96emBxHIKB8HFfZIESlMoC3Ex/A0e8vPpFh5t3GDQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>0.1.0</title>
             <pubDate>Sat, 21 Mar 2026 12:00:18 +0800</pubDate>
             <link>https://aether.7caifei.com/download</link>
             <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
@@ -28,20 +42,6 @@
             <sparkle:deltas>
                 <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321114941-20260321110907.delta" sparkle:deltaFrom="20260321110907" length="697294" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="3DxxPd55T2sU4p1h3fFwA7SSDc/hU1GqtIEatoENdequxJiNxcWM/RkcHHrZK1yrQ+it6IDL7FcsO5IYyC1+CQ=="/>
                 <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321114941-20260321110305.delta" sparkle:deltaFrom="20260321110305" length="696578" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="P32EnZSOgboeTksoD/28UXDWQUPRxEl1hCyxs6xHnoCwgF4zSPQThiQY3d8siIGAc3nSS8F+DaGQu/Xa8TsWBg=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>0.1.0</title>
-            <pubDate>Sat, 21 Mar 2026 11:09:58 +0800</pubDate>
-            <link>https://aether.7caifei.com/download</link>
-            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
-            <sparkle:version>20260321110907</sparkle:version>
-            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_20260321110907.zip" length="8075018" type="application/octet-stream" sparkle:edSignature="WSZjND/Tj1aAmrH72yxiXD1XPex4cL7dE9RQtGgR8fkE9CSt9RRl8rG9ZW2RbBbKQi1h+51vYJaiyZSPUshCDA=="/>
-            <sparkle:deltas>
-                <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321110907-20260321110305.delta" sparkle:deltaFrom="20260321110305" length="15322" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="bnt8BS+UNpQ8MlK9qNcSzoQjEDMwYmejANOBAQLdUaxZNlFJjH7dAwBxia03Zd2BGmS4lZHciNiC1uTlCT0QBg=="/>
-                <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321110907-20260321105724.delta" sparkle:deltaFrom="20260321105724" length="550158" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="ZIwjN80i1/6o/OWiDXkd25j5yK74/z8s8dgOe8MS082N9qODzqiyFvJ7DQMampLJSMk6WfV6YEHpY1S1goQxDQ=="/>
             </sparkle:deltas>
         </item>
     </channel>
