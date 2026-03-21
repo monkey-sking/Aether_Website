@@ -50,32 +50,36 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
     },
     {
-      version: "0.1.0-beta (b30)",
+      version: "0.1.0-beta (b31)",
       date: "2026-03-21",
       new: {
-        en: [],
-        "zh-hans": [],
+        en: [
+          "Added a one-click option to clear both retained voice history and cumulative usage statistics.",
+        ],
+        "zh-hans": [
+          "新增一键清空语音历史与累计统计的操作。",
+        ],
       },
       improved: {
         en: [
-          "Expanded the built-in voice lexicon across more locales.",
-          "Refined the main window layout and sidebar sizing behavior.",
-          "Moved the activation gate to a sheet flow so the main UI stays consistent.",
+          "Reworked Voice Usage Insights with cumulative summaries, per-app aggregates, issue-rate cards, and recent-activity filters.",
+          "Improved Chinese dictation endpoint detection and added a safer final punctuation fallback.",
+          "Polished HUD diagnostics, command previews, and localized settings copy for clearer feedback.",
         ],
         "zh-hans": [
-          "扩展内置语音指令词库，覆盖更多语言环境。",
-          "优化主窗口布局与侧边栏宽度适配逻辑。",
-          "将授权门槛改为 sheet 流程，主界面保持一致。",
+          "重做语音使用统计页，加入累计概览、按 App 汇总、问题率卡片和最近记录筛选。",
+          "优化中文听写收尾判断，并补充更稳妥的句末标点兜底。",
+          "统一 HUD 诊断、命令预览与设置页多语言文案，反馈更清晰。",
         ],
       },
       fixed: {
         en: [
-          "Fixed a routing edge case where shorter aliases could win over longer, more specific commands.",
-          "Adjusted the DMG Finder layout for a cleaner drag-to-Applications experience.",
+          "Kept older Unrecognized labels compatible after renaming unmatched dictation events and statistics.",
+          "Added regression coverage for voice command routing and endpoint handling edge cases.",
         ],
         "zh-hans": [
-          "修复语音路由在部分场景下被较短别名抢先匹配的问题（更长、更准确的指令优先）。",
-          "调整 DMG Finder 布局，拖拽到 Applications 更清晰。",
+          "将旧版“未识别”统计口径兼容到新版“未匹配”命名，避免升级后数据断层。",
+          "补充语音命令路由与收尾判断的回归测试覆盖。",
         ],
       },
     },
