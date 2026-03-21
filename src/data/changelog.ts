@@ -50,32 +50,32 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
     },
     {
-      version: "0.1.0-beta (b34)",
+      version: "0.1.0-beta (b35)",
       date: "2026-03-21",
       new: {
         en: [
-          "Added a separate anomaly bucket for no-speech and environment-triggered dictation issues.",
+          "Added a developer terminology boost toggle that automatically applies contextual vocabulary in Terminal, Xcode, VS Code, Codex, and similar apps.",
         ],
         "zh-hans": [
-          "新增“异常”统计分类，用于单独统计未识别到人声等环境触发问题。",
+          "新增“开发者术语增强”开关，在 Terminal、Xcode、VS Code、Codex 等应用前台时自动补充上下文词汇。",
         ],
       },
       improved: {
         en: [
-          "Expanded Voice Usage Insights with anomaly prioritization, clearer per-app rows, and full bundle identifiers in recent activity.",
+          "Expanded Voice Usage Insights with anomaly-aware summaries, full bundle identifiers, and richer recent-activity cards.",
           "Suppressed focused typing fallback after explicit non-input clicks for apps with unusual typing behavior.",
         ],
         "zh-hans": [
-          "扩展语音统计页，按异常优先排序，并在按 App 和最近活动中显示完整 bundle 标识。",
+          "扩展语音统计页，加入异常维度汇总，并在按 App 和最近活动中显示完整 bundle 标识。",
           "针对输入行为异常的 App，在明确点击非输入区域后抑制错误的输入状态回退。",
         ],
       },
       fixed: {
         en: [
-          "Reduced the chance of Sparkle update prompts being covered by existing HUD surfaces.",
+          "Added regression coverage for developer-speech profile matching and common phrase corrections.",
         ],
         "zh-hans": [
-          "降低 Sparkle 检测更新弹窗被已有 HUD 层遮挡的概率。",
+          "补充开发者语音配置匹配与常见短语纠正的回归测试覆盖。",
         ],
       },
     },
