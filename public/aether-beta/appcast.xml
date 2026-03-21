@@ -4,6 +4,20 @@
         <title>Aether</title>
         <item>
             <title>0.1.0</title>
+            <pubDate>Sat, 21 Mar 2026 19:14:15 +0800</pubDate>
+            <link>https://aether.7caifei.com/download</link>
+            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
+            <sparkle:version>20260321191248</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_b34.zip" length="8291939" type="application/octet-stream" sparkle:edSignature="oPVJWLds1Cern9xbJmtpQvWABvR8zOagMWr9DBcN5MbSyHwRHvXpBMbjlXAknjlCtUP6gLkMdpcqLHz4E+ReCg==" />
+            <sparkle:deltas>
+                <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321191248-20260321185257.delta" sparkle:deltaFrom="20260321185257" length="912346" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="dto2qiW7DJ+nyxbd6BKiblWspvufCLRPforutB2tifSmwVBYmOCA4/s+0szVWLxIqLssN4dkIDU8nAipOKETCA==" />
+                <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321191248-20260321183622.delta" sparkle:deltaFrom="20260321183622" length="935298" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="R4vw79fM/hEgTKEtJomBZqnnR1BbgflqM3Cs6SrwA2HktzEXRxRWz7b86NH0to3LsZurgvEgR5dyjrhs0PFyDA==" />
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>0.1.0</title>
             <pubDate>Sat, 21 Mar 2026 18:54:18 +0800</pubDate>
             <link>https://aether.7caifei.com/download</link>
             <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
@@ -25,22 +39,6 @@
             <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
             <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_b32.zip" length="8265970" type="application/octet-stream" sparkle:edSignature="KXizrD5G8HPBdn6kusZRZU0BY6N0n9/c++QjP9UkFygHDlbsgxnkmAJh109DnQMIiGXi/8bvjwRzqT4Mrbh/Cw==" />
-            <sparkle:deltas>
-                <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321183622-20260321172110.delta" sparkle:deltaFrom="20260321172110" length="947322" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="4Yok+L4qWuKCTlIbDxFE/l6rL3OiyNgHqnIh9r7ee8sA/2mkNT25M463I09Xml7R13UuLA044WJitldNjJlTAQ==" />
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>0.1.0</title>
-            <pubDate>Sat, 21 Mar 2026 18:05:15 +0800</pubDate>
-            <link>https://aether.7caifei.com/download</link>
-            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
-            <sparkle:version>20260321180349</sparkle:version>
-            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_b31.zip" length="8260762" type="application/octet-stream" sparkle:edSignature="anIA9o9ReWZ0TOBL4DGc7oyoSE6jYey0Y+CIAqssjFnXHk1Sb0SSS+JK5SV4KAzUxePcs0sFpvC7UY84/YAZAA==" />
-            <sparkle:deltas>
-                <enclosure url="https://aether.7caifei.com/aether-beta/Aether20260321180349-20260321172110.delta" sparkle:deltaFrom="20260321172110" length="929562" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="ifALofgICkIdnNk1hYbJ+uzJ5BY6CuwAF7g7idYhiv2XLt11huDB/XgamikOz3+mxWWGRP3Nc1w9tRL1c6yZAw==" />
-                </sparkle:deltas>
-        </item>
+            </item>
     </channel>
 </rss>

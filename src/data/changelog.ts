@@ -50,28 +50,32 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
     },
     {
-      version: "0.1.0-beta (b33)",
+      version: "0.1.0-beta (b34)",
       date: "2026-03-21",
       new: {
-        en: [],
-        "zh-hans": [],
+        en: [
+          "Added a separate anomaly bucket for no-speech and environment-triggered dictation issues.",
+        ],
+        "zh-hans": [
+          "新增“异常”统计分类，用于单独统计未识别到人声等环境触发问题。",
+        ],
       },
       improved: {
         en: [
-          "Hid the HUD immediately before showing Sparkle update checks and modal alerts.",
-          "Suppressed HUD overlays while Aether's own foreground windows are visible.",
+          "Expanded Voice Usage Insights with anomaly prioritization, clearer per-app rows, and full bundle identifiers in recent activity.",
+          "Suppressed focused typing fallback after explicit non-input clicks for apps with unusual typing behavior.",
         ],
         "zh-hans": [
-          "在 Sparkle 检查更新和弹出模态更新提示前，立即收起 HUD。",
-          "当前台显示 Aether 自身窗口时，抑制 HUD 叠加层继续出现。",
+          "扩展语音统计页，按异常优先排序，并在按 App 和最近活动中显示完整 bundle 标识。",
+          "针对输入行为异常的 App，在明确点击非输入区域后抑制错误的输入状态回退。",
         ],
       },
       fixed: {
         en: [
-          "Reduced the chance of the update prompt being covered by existing HUD surfaces.",
+          "Reduced the chance of Sparkle update prompts being covered by existing HUD surfaces.",
         ],
         "zh-hans": [
-          "降低检测更新弹窗被已有 HUD 层遮挡的概率。",
+          "降低 Sparkle 检测更新弹窗被已有 HUD 层遮挡的概率。",
         ],
       },
     },
