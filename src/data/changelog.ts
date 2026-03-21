@@ -50,6 +50,26 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
     },
     {
+      version: "0.1.0-beta (b36)",
+      date: "2026-03-21",
+      new: {
+        en: [],
+        "zh-hans": [],
+      },
+      improved: {
+        en: [
+          "Condensed Voice Usage Insights cards by moving full bundle identifiers into hover help and surfacing issue or anomaly summaries inline.",
+        ],
+        "zh-hans": [
+          "收紧语音统计卡片布局，将完整 bundle 标识改为悬浮提示，并把问题或异常摘要压缩到单行展示。",
+        ],
+      },
+      fixed: {
+        en: [],
+        "zh-hans": [],
+      },
+    },
+    {
       version: "0.1.0-beta (b35)",
       date: "2026-03-21",
       new: {
