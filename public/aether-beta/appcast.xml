@@ -4,6 +4,16 @@
         <title>Aether</title>
         <item>
             <title>0.1.0</title>
+            <pubDate>Sat, 21 Mar 2026 10:10:29 +0800</pubDate>
+            <link>https://aether.7caifei.com/download</link>
+            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
+            <sparkle:version>20260321100915</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_20260321100915.zip" length="8049059" type="application/octet-stream" sparkle:edSignature="OQyYNjiOJ/Ew/k7nA+AtUK1gMZehi5wNndLewIZZtaeP1gj0duU71ttVggpmPdzpb/CTk4qnClUK5Xr08zsEDA=="/>
+        </item>
+        <item>
+            <title>0.1.0</title>
             <pubDate>Fri, 20 Mar 2026 17:53:48 +0800</pubDate>
             <link>https://aether.7caifei.com/download</link>
             <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
