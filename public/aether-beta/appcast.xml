@@ -4,6 +4,16 @@
         <title>Aether</title>
         <item>
             <title>0.1.0</title>
+            <pubDate>Sat, 21 Mar 2026 10:24:02 +0800</pubDate>
+            <link>https://aether.7caifei.com/download</link>
+            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
+            <sparkle:version>20260321102257</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_20260321102257.zip" length="8049113" type="application/octet-stream" sparkle:edSignature="wcBXXo4bfxw0pfzV9kv0Xy9siCmyAet0sHUDsE4mU/AFZmOZkvyycfgwSmcTAsfhnlsKAiuvLQGMbKIbJRjPCw=="/>
+        </item>
+        <item>
+            <title>0.1.0</title>
             <pubDate>Sat, 21 Mar 2026 10:10:29 +0800</pubDate>
             <link>https://aether.7caifei.com/download</link>
             <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
@@ -21,16 +31,6 @@
             <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
             <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_20260320175231.zip" length="8028225" type="application/octet-stream" sparkle:edSignature="FTSLkb2dC2ae1kJxayKjgH7nHtyvgh05SW2u03rO2LKmS8GiOkkTAgF0UTajKVVjA90kljNStnEkN3hZUlv4Aw=="/>
-        </item>
-        <item>
-            <title>0.1.0</title>
-            <pubDate>Fri, 20 Mar 2026 17:43:38 +0800</pubDate>
-            <link>https://aether.7caifei.com/download</link>
-            <sparkle:fullReleaseNotesLink>https://aether.7caifei.com/changelog</sparkle:fullReleaseNotesLink>
-            <sparkle:version>20260320174231</sparkle:version>
-            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://aether.7caifei.com/aether-beta/Aether_0.1.0_20260320174231.zip" length="8027824" type="application/octet-stream" sparkle:edSignature="9UveQ3Ar88btKdV9Ru/knDIJCwz4RdLmN1b0dwZ3rr9npWNITjgWZ78ekW4BHfxqUMzNQrcSv2T+950bMXNvCw=="/>
         </item>
     </channel>
 </rss>
