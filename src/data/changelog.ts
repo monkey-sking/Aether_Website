@@ -50,7 +50,7 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
     },
     {
-      version: "0.1.0-beta (b32)",
+      version: "0.1.0-beta (b33)",
       date: "2026-03-21",
       new: {
         en: [],
@@ -58,20 +58,20 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
       improved: {
         en: [
-          "Polished the recent activity list in Voice Usage Insights with tighter event grouping and hover-revealed copy actions.",
-          "Kept the latest beta rollout aligned with the refreshed usage diagnostics and dictation feedback flow.",
+          "Hid the HUD immediately before showing Sparkle update checks and modal alerts.",
+          "Suppressed HUD overlays while Aether's own foreground windows are visible.",
         ],
         "zh-hans": [
-          "优化语音统计最近活动列表的排版分组，并将复制按钮改为悬停显示。",
-          "让最新一轮 Beta 与新的使用诊断和听写反馈流程保持一致。",
+          "在 Sparkle 检查更新和弹出模态更新提示前，立即收起 HUD。",
+          "当前台显示 Aether 自身窗口时，抑制 HUD 叠加层继续出现。",
         ],
       },
       fixed: {
         en: [
-          "Full beta update remains available even though the delta package from b31 to b32 was skipped during publish.",
+          "Reduced the chance of the update prompt being covered by existing HUD surfaces.",
         ],
         "zh-hans": [
-          "本次发布未生成 b31 到 b32 的增量包时，更新仍会自动回退到完整包下载。",
+          "降低检测更新弹窗被已有 HUD 层遮挡的概率。",
         ],
       },
     },
