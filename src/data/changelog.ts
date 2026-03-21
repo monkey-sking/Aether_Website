@@ -50,8 +50,8 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
     },
     {
-      version: "0.1.0-beta (202603201212)",
-      date: "2026-03-20",
+      version: "0.1.0-beta (b29)",
+      date: "2026-03-21",
       new: {
         en: [],
         "zh-hans": [],
