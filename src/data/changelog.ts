@@ -50,6 +50,28 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
     },
     {
+      version: "0.1.0-beta (b37)",
+      date: "2026-03-21",
+      new: {
+        en: [],
+        "zh-hans": [],
+      },
+      improved: {
+        en: [
+          "Tightened Voice Usage Insights rows by moving app identifiers into hover help and keeping issue or anomaly summaries on a single line.",
+          "Stabilized HUD typing-state recovery around explicit suppression windows for apps with special typing behavior.",
+        ],
+        "zh-hans": [
+          "继续收紧语音统计行布局，将应用标识放入悬浮提示，并把问题或异常摘要稳定压缩为单行。",
+          "修正特殊输入应用下显式抑制窗口期间的 HUD 输入态恢复判断。",
+        ],
+      },
+      fixed: {
+        en: [],
+        "zh-hans": [],
+      },
+    },
+    {
       version: "0.1.0-beta (b36)",
       date: "2026-03-21",
       new: {
