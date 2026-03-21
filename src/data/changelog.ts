@@ -50,36 +50,28 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
       },
     },
     {
-      version: "0.1.0-beta (b31)",
+      version: "0.1.0-beta (b32)",
       date: "2026-03-21",
       new: {
-        en: [
-          "Added a one-click option to clear both retained voice history and cumulative usage statistics.",
-        ],
-        "zh-hans": [
-          "新增一键清空语音历史与累计统计的操作。",
-        ],
+        en: [],
+        "zh-hans": [],
       },
       improved: {
         en: [
-          "Reworked Voice Usage Insights with cumulative summaries, per-app aggregates, issue-rate cards, and recent-activity filters.",
-          "Improved Chinese dictation endpoint detection and added a safer final punctuation fallback.",
-          "Polished HUD diagnostics, command previews, and localized settings copy for clearer feedback.",
+          "Polished the recent activity list in Voice Usage Insights with tighter event grouping and hover-revealed copy actions.",
+          "Kept the latest beta rollout aligned with the refreshed usage diagnostics and dictation feedback flow.",
         ],
         "zh-hans": [
-          "重做语音使用统计页，加入累计概览、按 App 汇总、问题率卡片和最近记录筛选。",
-          "优化中文听写收尾判断，并补充更稳妥的句末标点兜底。",
-          "统一 HUD 诊断、命令预览与设置页多语言文案，反馈更清晰。",
+          "优化语音统计最近活动列表的排版分组，并将复制按钮改为悬停显示。",
+          "让最新一轮 Beta 与新的使用诊断和听写反馈流程保持一致。",
         ],
       },
       fixed: {
         en: [
-          "Kept older Unrecognized labels compatible after renaming unmatched dictation events and statistics.",
-          "Added regression coverage for voice command routing and endpoint handling edge cases.",
+          "Full beta update remains available even though the delta package from b31 to b32 was skipped during publish.",
         ],
         "zh-hans": [
-          "将旧版“未识别”统计口径兼容到新版“未匹配”命名，避免升级后数据断层。",
-          "补充语音命令路由与收尾判断的回归测试覆盖。",
+          "本次发布未生成 b31 到 b32 的增量包时，更新仍会自动回退到完整包下载。",
         ],
       },
     },
