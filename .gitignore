@@ -23,6 +23,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# Sparkle publish leftovers (we only ship the latest full ZIP + appcast)
-public/aether-beta/*.delta
+# Sparkle publish leftovers (old updates moved here by generate_appcast)
 public/aether-beta/old_updates/
