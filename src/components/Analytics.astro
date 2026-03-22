@@ -190,49 +190,6 @@ const isProd = import.meta.env.PROD; // Only run in production build
     const path = window.location.pathname || "/";
     const lang = path.startsWith("/zh-hans") ? "zh-hans" : "en";
 
-    if (channel === "stable") {
-      event.preventDefault();
-
-      const betaHref = anchor.dataset.betaRedirect || "/beta/Aether.dmg";
-      const modalCopy = lang.startsWith("zh")
-        ? {
-            heading: "正式版暂未开放",
-            message: "当前对外开放的是 Beta 下载。你可以先下载 Beta 版本继续体验 Aether。",
-            cancelLabel: "先不下载",
-            confirmLabel: "前往 Beta 下载",
-          }
-        : {
-            heading: "Stable is not public yet",
-            message: "Beta downloads are currently the public channel. You can continue with the Beta build for now.",
-            cancelLabel: "Not now",
-            confirmLabel: "Open Beta Download",
-          };
-
-      stableRedirectModal(modalCopy).then((accepted) => {
-        if (typeof window.gtag === "function") {
-          window.gtag("event", accepted ? "download_manual_stable_redirect_beta" : "download_manual_stable_cancel", {
-            event_category: "download",
-            event_label: href,
-            channel,
-            kind,
-          });
-        }
-
-        if (Array.isArray(window._hmt)) {
-          window._hmt.push(["_trackEvent", "download", accepted ? "download_manual_stable_redirect_beta" : "download_manual_stable_cancel", href]);
-        }
-
-        if (typeof window.clarity === "function") {
-          window.clarity("event", accepted ? "download_manual_stable_redirect_beta" : "download_manual_stable_cancel");
-        }
-
-        if (accepted) {
-          window.location.href = betaHref;
-        }
-      });
-      return;
-    }
-
     if (typeof window.gtag === "function") {
       window.gtag("event", eventName, {
         event_category: "download",

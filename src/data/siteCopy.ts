@@ -295,12 +295,12 @@ const en: SiteCopy = {
   download: {
     title: "Download Aether",
     subtitle:
-      "Public downloads are currently available through the Beta channel. Stable will open later.",
+      "Stable downloads are now public. Beta remains available for earlier preview builds.",
     tag: "Download",
     stepsTag: "Installation",
     stableLabel: "Stable",
     stablePath: "/download/Aether.dmg",
-    stableBody: "Not publicly available yet. Stable downloads will open after the first formal release.",
+    stableBody: "Recommended for most people. Use this if you want the normal public release path.",
     betaLabel: "Beta",
     betaPath: "/beta/Aether.dmg",
     betaBody: "Earlier changes for testers who want them and can tolerate rougher builds.",
@@ -323,7 +323,7 @@ const en: SiteCopy = {
     notesTitle: "Before launch",
     notes: [
       "Install Aether into /Applications before granting permissions.",
-      "Public downloads are currently on Beta. Stable will be available later.",
+      "Stable is now the default public download path. Beta stays available for earlier preview builds.",
       "Use the About page inside the app for activation, device status, and updates.",
     ],
     helpTitle: "If something feels off",
@@ -336,14 +336,14 @@ const en: SiteCopy = {
   pricing: {
     title: "Pricing Coming Soon",
     subtitle:
-      "Aether is currently in public beta. Pricing will be announced soon.",
+      "Aether is now publicly available on the stable channel. Pricing details will be announced soon.",
     tag: "Pricing",
     plans: [],
     referral: "",
-    cta: "Download Beta",
-    noteTitle: "Public Beta",
+    cta: "Download for Mac",
+    noteTitle: "Current Access",
     noteBody:
-      "During the public beta phase, Aether is free to test. Stay tuned for official pricing details.",
+      "Stable and Beta are both publicly available right now. Pricing is still being finalized.",
   },
   faq: {
     title: "Questions people ask before they install",
@@ -641,12 +641,12 @@ const zhHans: SiteCopy = {
   download: {
     title: "下载 Aether",
     subtitle:
-      "当前对外开放的是 Beta 下载，正式版稍后开放。",
+      "Stable 现已正式开放下载，Beta 继续保留给想更早体验变化的用户。",
     tag: "下载",
     stepsTag: "安装步骤",
     stableLabel: "Stable",
     stablePath: "/download/Aether.dmg",
-    stableBody: "目前还未对外开放，正式版会在首次正式发布后提供下载。",
+    stableBody: "适合大多数用户，作为当前默认的公开正式下载入口。",
     betaLabel: "Beta",
     betaPath: "/beta/Aether.dmg",
     betaBody: "给想更早拿到变化的测试者准备，也会更粗糙一些。",
@@ -669,7 +669,7 @@ const zhHans: SiteCopy = {
     notesTitle: "启动前先确认",
     notes: [
       "请先将 Aether 安装到 /Applications，再授予权限。",
-      "当前对外提供的是 Beta 下载，正式版会稍后开放。",
+      "Stable 现在已经是默认公开下载入口；Beta 继续提供更早的预览版本。",
       "App 内 About 页面统一管理激活、设备状态和更新。",
     ],
     helpTitle: "如果哪里不对",
@@ -682,14 +682,14 @@ const zhHans: SiteCopy = {
   pricing: {
     title: "价格敬请期待",
     subtitle:
-      "Aether 目前处于公开测试阶段，正式定价规则即将公布。",
+      "Aether 现已通过 Stable 通道正式对外提供下载，定价规则即将公布。",
     tag: "价格",
     plans: [],
     referral: "",
-    cta: "下载测试版",
-    noteTitle: "公开测试说明",
+    cta: "下载 Mac 版",
+    noteTitle: "当前开放方式",
     noteBody:
-      "在公开测试期间，您可以免费体验 Aether 的完整功能。请关注我们的后续更新以获取正式定价信息。",
+      "当前 Stable 和 Beta 都已公开提供，正式定价仍在收口中。",
   },
   faq: {
     title: "安装前大家最常问的事",

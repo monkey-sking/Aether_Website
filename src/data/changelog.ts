@@ -23,7 +23,36 @@ const labels: Record<ChangelogLang, { new: string; improved: string; fixed: stri
 };
 
 const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
-  stable: [],
+  stable: [
+    {
+      version: "0.1.0",
+      date: "2026-03-22",
+      new: {
+        en: [
+          "Released the first public stable version of Aether.",
+          "Opened the public stable download path and in-app stable update feed.",
+        ],
+        "zh-hans": [
+          "发布 Aether 首个公开正式版本。",
+          "正式开放 Stable 下载路径和 App 内正式更新通道。",
+        ],
+      },
+      improved: {
+        en: [
+          "Stable is now the default path for most users, while Beta remains available for earlier preview builds.",
+          "Website download links, changelog, and signed release assets now point to the same public stable build.",
+        ],
+        "zh-hans": [
+          "Stable 现在作为大多数用户的默认下载入口，Beta 继续保留给想更早体验变化的用户。",
+          "官网下载入口、正式版日志和签名发布产物已经统一指向同一个公开正式版本。",
+        ],
+      },
+      fixed: {
+        en: [],
+        "zh-hans": [],
+      },
+    },
+  ],
   beta: [
     {
       version: "0.1.0-beta",
