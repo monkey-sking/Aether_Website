@@ -38,14 +38,8 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
         ],
       },
       improved: {
-        en: [
-          "Stable is now the default path for most users, while Beta remains available for earlier preview builds.",
-          "Website download links, changelog, and signed release assets now point to the same public stable build.",
-        ],
-        "zh-hans": [
-          "Stable 现在作为大多数用户的默认下载入口，Beta 继续保留给想更早体验变化的用户。",
-          "官网下载入口、正式版日志和签名发布产物已经统一指向同一个公开正式版本。",
-        ],
+        en: [],
+        "zh-hans": [],
       },
       fixed: {
         en: [],
