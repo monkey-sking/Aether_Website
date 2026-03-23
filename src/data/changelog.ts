@@ -83,27 +83,93 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
   ],
   beta: [
     {
-      version: "0.1.0-beta",
-      date: "2026-03-20",
+      version: "0.1.0-beta (b67-b74)",
+      date: "2026-03-23",
       new: {
         en: [
-          "Released the first public beta version of Aether.",
+          "Added a dedicated Wake & Activation page with wake hits, empty wakes, dictation or control follow-ups, phrase distribution, and recent event history.",
+          "Added wake-history controls for capture, retention limits, statistics reset, and history cleanup.",
         ],
         "zh-hans": [
-          "发布 Aether 首个公开 Beta 版本。",
+          "新增独立的“唤醒与激活”页面，可查看唤醒命中、空唤醒、转输入、转控制、唤醒词分布和最近事件历史。",
+          "新增唤醒历史管理，可直接控制记录开关、保留上限、统计重置和历史清空。",
         ],
       },
       improved: {
         en: [
-          "This is the first public testing release, and the beta changelog starts here.",
+          "Improved activation recovery with clearer device-loading states, safer device-list retries, and a direct quit action from the locked screen.",
+          "Split microphone and speech permission onboarding into normal request and repair actions so first-time prompts no longer jump into System Settings too early.",
+          "Beta builds now default to the beta update feed unless the user explicitly switches channels.",
         ],
         "zh-hans": [
-          "这是第一次对外开放测试，Beta 更新日志从这个版本开始记录。",
+          "改进激活恢复流程，区分设备列表加载中与空列表状态，并补上锁定页直接退出入口。",
+          "将麦克风和语音识别权限引导拆成“正常申请”和“修复权限”两条路径，首次授权不再过早跳到系统设置。",
+          "Beta 构建现在默认跟随 Beta 更新通道，只有用户手动切换后才会改走 Stable。",
         ],
       },
       fixed: {
+        en: [
+          "Fixed rapid flickering between dictation and control mode in auto mode by removing the HUD-routing feedback loop.",
+          "Fixed denied-permission recovery paths that could clear TCC records too early and leave Aether missing from privacy panes.",
+        ],
+        "zh-hans": [
+          "修复自动模式下输入态与控制态来回闪烁的问题，拆掉 HUD 与语音路由之间的反馈环。",
+          "修复已拒绝权限场景下过早重置 TCC 记录，导致系统隐私列表里看不到 Aether 的问题。",
+        ],
+      },
+    },
+    {
+      version: "0.1.0-beta (b58-b66)",
+      date: "2026-03-23",
+      new: {
         en: [],
         "zh-hans": [],
+      },
+      improved: {
+        en: [
+          "Reworked Voice Usage Insights into a tighter usage-focused dashboard with clearer labels, a more useful app rail, and more detail moved into sheets.",
+          "Refined dictation routing and wake-session re-arm behavior so everyday phrases stay in text input while wake follow-up tracking becomes more stable.",
+          "Added more Chinese command aliases and forcing prefixes for command or dictation routing.",
+        ],
+        "zh-hans": [
+          "重做语音统计页，改成更收口的使用概览布局，文案更清楚，按 App 侧栏和详情页也更好扫读。",
+          "继续收紧听写路由和待机唤醒后的 re-arm 逻辑，让普通短句更稳定留在输入流里，同时让唤醒后续统计更完整。",
+          "补充更多中文命令别名和强制前缀，提升命令/听写切换时的可控性。",
+        ],
+      },
+      fixed: {
+        en: [
+          "Reduced accidental command matches from ordinary dictation phrases that referenced panel, paste, or undo operations.",
+        ],
+        "zh-hans": [
+          "降低普通听写短句误触“显示面板”“粘贴”“撤销”等命令的概率。",
+        ],
+      },
+    },
+    {
+      version: "0.1.0-beta (b52-b57)",
+      date: "2026-03-22",
+      new: {
+        en: [],
+        "zh-hans": [],
+      },
+      improved: {
+        en: [
+          "Rebuilt the early Voice Usage Insights iterations into a more compact dashboard with clearer labels, a usage-focused app list, and fewer always-visible details.",
+          "Added an option to hide no-speech events from the insights view.",
+        ],
+        "zh-hans": [
+          "将早期语音统计页重构成更紧凑的仪表盘，文案更清楚，按 App 列表更偏使用概览，主界面也减少了长期占位的细节。",
+          "新增隐藏 no-speech 事件的统计页开关。",
+        ],
+      },
+      fixed: {
+        en: [
+          "Blocked speech actions while macOS is locked.",
+        ],
+        "zh-hans": [
+          "修复系统锁屏时仍可能继续执行语音动作的问题。",
+        ],
       },
     },
     {
@@ -176,6 +242,30 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
         "zh-hans": [
           "补充开发者语音配置匹配与常见短语纠正的回归测试覆盖。",
         ],
+      },
+    },
+    {
+      version: "0.1.0-beta",
+      date: "2026-03-20",
+      new: {
+        en: [
+          "Released the first public beta version of Aether.",
+        ],
+        "zh-hans": [
+          "发布 Aether 首个公开 Beta 版本。",
+        ],
+      },
+      improved: {
+        en: [
+          "This is the first public testing release, and the beta changelog starts here.",
+        ],
+        "zh-hans": [
+          "这是第一次对外开放测试，Beta 更新日志从这个版本开始记录。",
+        ],
+      },
+      fixed: {
+        en: [],
+        "zh-hans": [],
       },
     },
   ],
