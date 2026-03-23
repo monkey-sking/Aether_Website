@@ -26,6 +26,40 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
   stable: [
     {
       version: "0.1.0",
+      date: "2026-03-23",
+      new: {
+        en: [
+          "Added a dedicated Wake & Activation page with wake hits, empty wakes, dictation or control follow-ups, phrase distribution, and recent event history.",
+          "Added wake-history management controls for capture, retention limits, statistics reset, and history cleanup.",
+        ],
+        "zh-hans": [
+          "新增独立的“唤醒与激活”页面，可查看唤醒命中、空唤醒、转输入、转控制、唤醒词分布和最近事件历史。",
+          "新增唤醒历史管理，可直接控制记录开关、保留上限、统计重置和历史清空。",
+        ],
+      },
+      improved: {
+        en: [
+          "Reworked the Voice Usage Insights layout and copy so the main view is tighter and more detail moves into side panels and sheets.",
+          "Improved standby and wake follow-up recognition so wake tracking and follow-up conversion are more complete.",
+          "Improved activation recovery with clearer device-loading states, safer device-list retries, and a direct quit action from the locked screen.",
+        ],
+        "zh-hans": [
+          "重做语音统计页布局与文案，主视图更收口，更多细节移入分栏和详情页。",
+          "改进待机与唤醒后的后续识别链路，让唤醒统计和转化记录更完整。",
+          "改进激活恢复流程，区分设备列表加载中与空列表状态，并补上锁定页直接退出入口。",
+        ],
+      },
+      fixed: {
+        en: [
+          "Fixed rapid flickering between dictation and control mode in auto mode, and reduced false cross-utterance trimming around short Chinese fragments.",
+        ],
+        "zh-hans": [
+          "修复自动模式下输入态与控制态来回闪烁的问题，并降低短中文片段的跨句误裁剪概率。",
+        ],
+      },
+    },
+    {
+      version: "0.1.0",
       date: "2026-03-22",
       new: {
         en: [
