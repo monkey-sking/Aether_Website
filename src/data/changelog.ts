@@ -83,7 +83,7 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
   ],
   beta: [
     {
-      version: "0.1.0-beta (b77-b84)",
+      version: "0.1.0-beta (b77-b85)",
       date: "2026-03-24",
       new: {
         en: [
@@ -99,20 +99,24 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
         en: [
           "Improved OpenAI-compatible provider support, beta version labeling in update prompts, and rewrite history so recent activity now shows source text, rewritten text, and LLM status.",
           "Stored LLM API keys in Keychain instead of plain app preferences.",
+          "Wake-word standby now tolerates a short whitelist of filler lead-ins, and recent activity can show both the LLM candidate text and the final committed text.",
         ],
         "zh-hans": [
           "改进 OpenAI-compatible 接口兼容、更新提示里的 Beta 版本显示，以及 rewrite 历史记录；最近活动现在会显示原文、改写结果和 LLM 状态。",
           "LLM API Key 现已改存到 Keychain，不再直接落在普通应用偏好设置里。",
+          "唤醒词待命现在允许有限的口头前导词；最近活动里也可以同时看到 LLM 候选文本和最终提交文本。",
         ],
       },
       fixed: {
         en: [
           "Added dictation-enhancement guardrails that reject language drift, protected-token changes, and overly aggressive short-text rewrites.",
           "Fixed wake-gated typing so dictation cannot enter the typing path before wake confirmation while wake-word standby is armed.",
+          "Skipped LLM dictation enhancement automatically for structured text, number-heavy content, and code-like snippets to reduce false rewrites.",
         ],
         "zh-hans": [
           "为听写增强补上护栏，拒绝语言漂移、受保护字段改写，以及短句过度重写。",
           "修复唤醒词待命时未完成唤醒确认就进入输入链路的问题。",
+          "对结构化文本、数字密集内容和代码样式片段自动跳过 LLM 听写增强，减少误改写。",
         ],
       },
     },
