@@ -83,6 +83,40 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
   ],
   beta: [
     {
+      version: "0.1.0-beta (b77-b84)",
+      date: "2026-03-24",
+      new: {
+        en: [
+          "Added a full-text rewrite command that reads the current editor content, runs an LLM rewrite pass, and writes the optimized result back in place.",
+          "Added an LLM Rewrite settings card for API key, endpoint, model selection, connection testing, and model fetching.",
+        ],
+        "zh-hans": [
+          "新增“优化全文 / 全文纠错优化”命令，可读取当前输入框全文，走 LLM 优化后再回写结果。",
+          "新增 LLM Rewrite 配置卡片，可管理 API Key、Endpoint、Model，并支持测试连接和拉取模型列表。",
+        ],
+      },
+      improved: {
+        en: [
+          "Improved OpenAI-compatible provider support, beta version labeling in update prompts, and rewrite history so recent activity now shows source text, rewritten text, and LLM status.",
+          "Stored LLM API keys in Keychain instead of plain app preferences.",
+        ],
+        "zh-hans": [
+          "改进 OpenAI-compatible 接口兼容、更新提示里的 Beta 版本显示，以及 rewrite 历史记录；最近活动现在会显示原文、改写结果和 LLM 状态。",
+          "LLM API Key 现已改存到 Keychain，不再直接落在普通应用偏好设置里。",
+        ],
+      },
+      fixed: {
+        en: [
+          "Added dictation-enhancement guardrails that reject language drift, protected-token changes, and overly aggressive short-text rewrites.",
+          "Fixed wake-gated typing so dictation cannot enter the typing path before wake confirmation while wake-word standby is armed.",
+        ],
+        "zh-hans": [
+          "为听写增强补上护栏，拒绝语言漂移、受保护字段改写，以及短句过度重写。",
+          "修复唤醒词待命时未完成唤醒确认就进入输入链路的问题。",
+        ],
+      },
+    },
+    {
       version: "0.1.0-beta (b75-b76)",
       date: "2026-03-24",
       new: {
