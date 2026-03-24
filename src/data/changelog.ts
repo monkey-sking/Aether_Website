@@ -83,6 +83,36 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
   ],
   beta: [
     {
+      version: "0.1.0-beta (b75-b76)",
+      date: "2026-03-24",
+      new: {
+        en: [
+          "Added \"执行\" as an explicit Chinese command prefix, and unknown-command HUD now suggests the closest matching commands.",
+        ],
+        "zh-hans": [
+          "新增“执行”作为中文显式命令前缀；未识别命令时，HUD 也会给出最接近的命令建议。",
+        ],
+      },
+      improved: {
+        en: [
+          "Improved permission recovery by bringing Aether to the foreground before system prompts, and by relaunching into the follow-up recovery step after a TCC reset.",
+          "Improved explicit command parsing so leading punctuation, filler words, and polite suffixes no longer block frontmost-app commands like Send.",
+        ],
+        "zh-hans": [
+          "改进权限恢复流程，在拉起系统权限弹窗前先把 Aether 切到前台；执行 TCC 重置后，也会自动重启并继续后续恢复步骤。",
+          "改进显式命令解析，前导标点、礼貌词和尾缀词不再阻断“发送”等前台应用命令的匹配。",
+        ],
+      },
+      fixed: {
+        en: [
+          "Fixed wake-word follow-up payloads that previously kept auto-inserted commas or spaces after the wake phrase.",
+        ],
+        "zh-hans": [
+          "修复唤醒词后续 payload 会残留系统自动插入的逗号或空格的问题。",
+        ],
+      },
+    },
+    {
       version: "0.1.0-beta (b67-b74)",
       date: "2026-03-23",
       new: {
