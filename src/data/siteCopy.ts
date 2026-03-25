@@ -1,3 +1,5 @@
+import { manualDownloadURL } from "./downloads";
+
 export type SupportedLang = "en" | "zh-hans";
 
 export interface SectionBlock {
@@ -299,10 +301,10 @@ const en: SiteCopy = {
     tag: "Download",
     stepsTag: "Installation",
     stableLabel: "Stable",
-    stablePath: "/download/Aether.dmg",
+    stablePath: manualDownloadURL("stable"),
     stableBody: "Recommended for most people. Use this if you want the normal public release path.",
     betaLabel: "Beta",
-    betaPath: "/beta/Aether.dmg",
+    betaPath: manualDownloadURL("beta"),
     betaBody: "Earlier changes for testers who want them and can tolerate rougher builds.",
     betaLinkLabel: "Download Beta",
     stepsTitle: "After download",
@@ -645,10 +647,10 @@ const zhHans: SiteCopy = {
     tag: "下载",
     stepsTag: "安装步骤",
     stableLabel: "Stable",
-    stablePath: "/download/Aether.dmg",
+    stablePath: manualDownloadURL("stable"),
     stableBody: "适合大多数用户，作为当前默认的公开正式下载入口。",
     betaLabel: "Beta",
-    betaPath: "/beta/Aether.dmg",
+    betaPath: manualDownloadURL("beta"),
     betaBody: "给想更早拿到变化的测试者准备，也会更粗糙一些。",
     betaLinkLabel: "下载 Beta 版",
     stepsTitle: "下载后怎么做",
