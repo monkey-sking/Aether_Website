@@ -83,8 +83,8 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
   ],
   beta: [
     {
-      version: "0.1.0-beta (b77-b85)",
-      date: "2026-03-24",
+      version: "0.1.0-beta (b77-b86)",
+      date: "2026-03-25",
       new: {
         en: [
           "Added a full-text rewrite command that reads the current editor content, runs an LLM rewrite pass, and writes the optimized result back in place.",
@@ -99,12 +99,12 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
         en: [
           "Improved OpenAI-compatible provider support, beta version labeling in update prompts, and rewrite history so recent activity now shows source text, rewritten text, and LLM status.",
           "Stored LLM API keys in Keychain instead of plain app preferences.",
-          "Wake-word standby now tolerates a short whitelist of filler lead-ins, and recent activity can show both the LLM candidate text and the final committed text.",
+          "Wake-word standby now tolerates a short whitelist of filler lead-ins, awake follow-up matching is stricter, and recent activity can show both the LLM candidate text and the final committed text.",
         ],
         "zh-hans": [
           "改进 OpenAI-compatible 接口兼容、更新提示里的 Beta 版本显示，以及 rewrite 历史记录；最近活动现在会显示原文、改写结果和 LLM 状态。",
           "LLM API Key 现已改存到 Keychain，不再直接落在普通应用偏好设置里。",
-          "唤醒词待命现在允许有限的口头前导词；最近活动里也可以同时看到 LLM 候选文本和最终提交文本。",
+          "唤醒词待命现在允许有限的口头前导词，唤醒窗口内的 follow-up 匹配也更严格；最近活动里也可以同时看到 LLM 候选文本和最终提交文本。",
         ],
       },
       fixed: {
