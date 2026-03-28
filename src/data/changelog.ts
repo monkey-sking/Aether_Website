@@ -83,6 +83,46 @@ const changelogData: Record<ChangelogChannel, ChangelogItem[]> = {
   ],
   beta: [
     {
+      version: "0.1.0-beta (b87-b130)",
+      date: "2026-03-28",
+      new: {
+        en: [
+          "Added richer wake-word diagnostics with failure reasons, follow-up outcomes, and late-after-timeout tracking.",
+          "Split LLM routing so automatic dictation enhancement and full-text optimization can use different providers and switches.",
+          "Added App Launch Aliases and richer hotkey capture, including modifier-only and fn shortcut recording.",
+        ],
+        "zh-hans": [
+          "新增更完整的唤醒诊断与统计，可区分失败原因、follow-up 结果，以及超时后晚到内容。",
+          "将自动听写增强与全文优化拆成可独立配置的两套 LLM 开关和来源。",
+          "新增 App Launch Aliases 和更完整的快捷键录制，支持 modifier-only 和 fn 组合。",
+        ],
+      },
+      improved: {
+        en: [
+          "Improved activation and trial recovery, refined lock-screen and offline-grace handling, and reduced cases where already licensed sessions were blocked by the activation gate.",
+          "Refined the HUD across dictation, optimizing, and feedback states with steadier sizing, clearer device badges, compact speech lanes, and cleaner completion behavior.",
+          "Improved wake follow-up timing, standby recovery, and session hard-cap handling so long dictation sessions stay alive while command sessions still end quickly.",
+        ],
+        "zh-hans": [
+          "改进激活与试用恢复流程，补上锁屏和离线宽限细节，并减少已授权用户被激活页拦住的情况。",
+          "继续打磨 HUD 在听写、优化和反馈等状态下的表现，让尺寸更稳、设备角标更清楚、语音槽更紧凑，收尾也更干净。",
+          "改进唤醒后的 follow-up 时序、待机恢复和会话时长上限处理，让长听写不再过早被切断，同时保持命令模式的短上限。",
+        ],
+      },
+      fixed: {
+        en: [
+          "Reduced false typing promotion caused by stale targets, semantic AX nodes, browser web areas, and app-switch edge cases.",
+          "Recovered useful partials from recoverable no-speech endings instead of dropping whole utterances in always-listening flows.",
+          "Shortened rewrite stalls with clearer timeout handling, and removed duplicate dictation-complete HUD prompts.",
+        ],
+        "zh-hans": [
+          "降低旧 target 残留、语义 AX 节点、浏览器 Web 区域和切换应用边界场景带来的误输入态提升。",
+          "修复 always-listening 下可恢复 no-speech 直接整句丢失的问题，改为优先回退到有意义的 partial。",
+          "缩短全文优化长时间卡住的情况，补上更明确的超时提示，并移除重复的听写完成 HUD 提示。",
+        ],
+      },
+    },
+    {
       version: "0.1.0-beta (b77-b86)",
       date: "2026-03-25",
       new: {
