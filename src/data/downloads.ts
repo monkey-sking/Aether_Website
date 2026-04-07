@@ -4,7 +4,7 @@ export type DownloadSource = "manual" | "update";
 const TRACKING_GATEWAY_ORIGIN = "https://auth.aether.7caifei.com";
 const CURRENT_DOWNLOAD_VERSIONS: Record<DownloadChannel, string> = {
   stable: "0.1.0",
-  beta: "0.1.12",
+  beta: "0.1.13",
 };
 
 function downloadPath(channel: DownloadChannel): string {
