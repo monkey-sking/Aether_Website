@@ -24,4 +24,5 @@ pnpm-debug.log*
 .idea/
 
 # Sparkle publish leftovers (old updates moved here by generate_appcast)
+public/aether/old_updates/
 public/aether-beta/old_updates/
