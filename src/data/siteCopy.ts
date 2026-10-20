@@ -29,6 +29,7 @@ export interface SiteCopy {
     privacy: string;
     terms: string;
     rights: string;
+    more: string;
     contact: string;
   };
   home: {
@@ -175,6 +176,7 @@ const en: SiteCopy = {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     rights: "ProcessZero Team. All rights reserved.",
+    more: "More",
     contact: "Contact",
   },
   home: {
@@ -521,6 +523,7 @@ const zhHans: SiteCopy = {
     privacy: "隐私政策",
     terms: "服务条款",
     rights: "ProcessZero Team. All rights reserved.",
+    more: "更多",
     contact: "联系",
   },
   home: {
