@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /aether/Aether_
+Disallow: /aether-beta/Aether_
+Disallow: /download/Aether.dmg
+Disallow: /download/Aether.dmg.disabled
+Disallow: /beta/Aether.dmg
+
+Sitemap: https://aether.7caifei.com/sitemap.xml
