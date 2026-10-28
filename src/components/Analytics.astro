@@ -11,42 +11,79 @@ const CF_BEACON_ID = ""; // e.g., your-cf-beacon-id
 const isProd = import.meta.env.PROD; // Only run in production build
 ---
 
-{isProd && GOOGLE_ID && (
-  <>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ID}`} is:inline></script>
-    <script is:inline define:vars={{ GOOGLE_ID }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', GOOGLE_ID);
-    </script>
-  </>
-)}
-
-{isProd && BAIDU_ID && (
-    <script is:inline define:vars={{ BAIDU_ID }}>
-    var _hmt = _hmt || [];
+{isProd && (
+  <script is:inline define:vars={{ GOOGLE_ID, BAIDU_ID, CLARITY_ID, CF_BEACON_ID }}>
     (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?" + BAIDU_ID;
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-)}
+      // 仅在正式生产域名下加载统计脚本，过滤本地测试 (localhost / 127.0.0.1) 及预览/测试部署环境
+      var host = window.location.hostname;
+      var isProduction = host === 'aether.7caifei.com' || host === 'www.aether.7caifei.com';
 
-{isProd && CLARITY_ID && (
-    <script is:inline define:vars={{ CLARITY_ID }} type="text/javascript">
+      // 准备好基础全局对象与空函数，避免非生产环境下业务代码调用 window.gtag / _hmt / clarity 报错
+      window.dataLayer = window.dataLayer || [];
+      if (!window.gtag) {
+        window.gtag = function() {
+          window.dataLayer.push(arguments);
+        };
+      }
+      window._hmt = window._hmt || [];
+      if (!window.clarity) {
+        window.clarity = function() {
+          (window.clarity.q = window.clarity.q || []).push(arguments);
+        };
+      }
+
+      if (!isProduction) {
+        return;
+      }
+
+      // 1. Google Analytics
+      if (GOOGLE_ID) {
+        window.gtag('js', new Date());
+        window.gtag('config', GOOGLE_ID);
+
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GOOGLE_ID;
+        document.head.appendChild(gaScript);
+      }
+
+      // 2. 百度统计
+      if (BAIDU_ID) {
+        var hm = document.createElement('script');
+        hm.src = 'https://hm.baidu.com/hm.js?' + BAIDU_ID;
+        hm.defer = true;
+        var s = document.getElementsByTagName('script')[0];
+        if (s && s.parentNode) {
+          s.parentNode.insertBefore(hm, s);
+        } else {
+          document.head.appendChild(hm);
+        }
+      }
+
+      // 3. Microsoft Clarity
+      if (CLARITY_ID) {
         (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];
+          if (y && y.parentNode) {
+            y.parentNode.insertBefore(t,y);
+          } else {
+            document.head.appendChild(t);
+          }
         })(window, document, "clarity", "script", CLARITY_ID);
-    </script>
-)}
+      }
 
-{isProd && CF_BEACON_ID && (
-  <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token": "${CF_BEACON_ID}"}`}></script>
+      // 4. Cloudflare Web Analytics Beacon
+      if (CF_BEACON_ID) {
+        var cfScript = document.createElement('script');
+        cfScript.defer = true;
+        cfScript.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+        cfScript.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_BEACON_ID }));
+        document.head.appendChild(cfScript);
+      }
+    })();
+  </script>
 )}
 
 <script is:inline>
