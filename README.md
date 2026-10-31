@@ -1,5 +1,9 @@
 # Aether Website
 
+<!-- badges:start -->
+[![Stars](https://img.shields.io/github/stars/monkey-sking/Aether_Website?style=flat-square)](https://github.com/monkey-sking/Aether_Website/stargazers) [![Forks](https://img.shields.io/github/forks/monkey-sking/Aether_Website?style=flat-square)](https://github.com/monkey-sking/Aether_Website/network/members) [![Last commit](https://img.shields.io/github/last-commit/monkey-sking/Aether_Website?style=flat-square)](https://github.com/monkey-sking/Aether_Website/commits/main)
+<!-- badges:end -->
+
 Astro-based website for Aether.
 
 ## Purpose
